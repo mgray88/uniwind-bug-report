@@ -55,7 +55,7 @@ The app deliberately does not call `useColorScheme()` or `useUniwind()`: theme c
 
 | Dependency | Version |
 | --- | --- |
-| Uniwind Pro | 1.9.0 |
+| Uniwind Pro | 1.10.0 |
 | React Native | 0.88.1 |
 | Expo | 58.0.23 |
 | React | 19.3.0 |
@@ -66,7 +66,22 @@ The app deliberately does not call `useColorScheme()` or `useUniwind()`: theme c
 
 Direct dependencies are pinned; `pnpm-lock.yaml` pins transitive dependencies. Generated native projects and installed packages are not committed.
 
-## Verified device result
+## Latest verification (1.10.0)
+
+Upgraded to Uniwind Pro **1.10.0**, regenerated the lockfile, rebuilt the Android native app (including Uniwind C++), and cleared Metro's cache. All other direct dependency versions and the reproduction code are unchanged.
+
+Verified again on the physical Samsung SM-X518U, Android 16 / API 36:
+
+- Default `font-normal` mode mounted successfully in dark mode.
+- Switching dark → light with `adb shell cmd uimode night no` still produced the exact `AndroidTextInput` exception. Diagnostics sent numeric `fontWeight: 400`.
+- After relaunching into the string-weight control, switching light → dark succeeded. Diagnostics sent `fontWeight: '400'`, the input remained mounted, and the new process's logcat had no weight-cast failure.
+- Restored the original dark-mode setting. iOS and Web were not tested.
+
+![Android fontWeight exception on Uniwind Pro 1.10.0](evidence/android-fontweight-error-1.10.0.png)
+
+Upstream report: https://github.com/uni-stack/uniwind/issues/774
+
+## Original device result (1.9.0)
 
 Verified on a physical Samsung SM-X518U running Android 16 (API 36), with an arm64 Fabric debug build:
 

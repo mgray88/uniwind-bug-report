@@ -3,3 +3,6 @@ nodeLinker: hoisted
 allowBuilds:
   '@zowe/secrets-for-zowe-sdk': true
   uniwind-pro: true
+
+minimumReleaseAgeExclude:
+  - uniwind-pro@1.10.0
