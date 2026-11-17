@@ -1,0 +1,36 @@
+# Dependencies and generated native projects
+node_modules/
+/android/
+/ios/
+.expo/
+uniwind-types.d.ts
+
+# Local credentials and machine configuration
+.env
+.env.*
+.npmrc
+.uniwind/
+.uniwind-pro/
+.uniwindrc*
+credentials.json
+local.properties
+*.keystore
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+
+# Build output and caches
+build/
+dist/
+web-build/
+.gradle/
+.pnpm-store/
+*.apk
+*.aab
+*.ipa
+*.hbc
+*.log
+*.tsbuildinfo
+.DS_Store

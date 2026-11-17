@@ -1,0 +1,5 @@
+nodeLinker: hoisted
+
+allowBuilds:
+  '@zowe/secrets-for-zowe-sdk': true
+  uniwind-pro: true

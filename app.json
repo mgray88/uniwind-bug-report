@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Uniwind Bug Report",
+    "slug": "uniwind-bug-report",
+    "version": "1.0.0",
+    "userInterfaceStyle": "automatic",
+    "android": {
+      "package": "dev.mgray88.uniwindbugreport"
+    }
+  }
+}
